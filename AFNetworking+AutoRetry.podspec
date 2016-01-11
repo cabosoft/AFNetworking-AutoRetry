@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'AFNetworking+AutoRetry'
-  s.version      = '0.0.5'
+  s.version      = '0.0.6-CABO'
   s.summary      = 'Auto Retries for AFNetworking requests'
   s.description  = <<-DESC
                    A minimal category which extends AFNetworking, currently only AFHTTPRequestOperationManager, to
@@ -13,8 +13,9 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/shaioz/AFNetworking-AutoRetry.git',
                      :tag => "v#{s.version}" }
 
-  s.ios.deployment_target = '6.0'
-  s.osx.deployment_target = '10.8'
+  s.watchos.deployment_target = '2.0'
+  s.ios.deployment_target = '7.0'
+  s.osx.deployment_target = '10.9'
   s.requires_arc = true
 
   s.source_files = '*.{h,m}'

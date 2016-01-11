@@ -49,8 +49,9 @@
 		35D93B5F475C87CD9CACC72F /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		35D93BD14242A0522AC0FE7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		35D93C3CB1526F8767664F25 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		544D3ACA2C6F6CB7CB6EAB7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7135D125C62044819695FCA7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE48F9C09CC74C9F9A431905 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FBCADE418B984572A8478CF3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +115,17 @@
 				35D93B5F475C87CD9CACC72F /* LICENSE */,
 				35D938B9DE4C6674EDF61DF8 /* AFNetworking+AutoRetry.podspec */,
 				35D9383FF1FD8220D3D4A3E7 /* Podfile */,
-				DE48F9C09CC74C9F9A431905 /* Pods.xcconfig */,
+				95B872D5BA65918CB385CBB2 /* Pods */,
 			);
+			sourceTree = "<group>";
+		};
+		95B872D5BA65918CB385CBB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				544D3ACA2C6F6CB7CB6EAB7A /* Pods.release.xcconfig */,
+				FBCADE418B984572A8478CF3 /* Pods.debug.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +172,7 @@
 		35D93718DAF00A5D7A87FD46 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 			};
 			buildConfigurationList = 35D937547C3123256E75348F /* Build configuration list for PBXProject "AFNetworking-AutoRetry" */;
@@ -174,8 +185,6 @@
 			mainGroup = 35D93F36B199968C936F7B4B;
 			productRefGroup = 35D93E6FB6E91AC2D2BD1D47 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				35D93512DFDB6E9BC9EF7ADC /* AFNetworking-AutoRetry */,
@@ -207,7 +216,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C8BDE9318D774086A9BBD725 /* Check Pods Manifest.lock */ = {
@@ -295,37 +304,42 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
 		35D938DC094EABFFAF36C81D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE48F9C09CC74C9F9A431905 /* Pods.xcconfig */;
+			baseConfigurationReference = FBCADE418B984572A8478CF3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/AFNetworking_AutoRetry.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AFNetworking-AutoRetry/AFNetworking-AutoRetry-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				GCC_PREFIX_HEADER = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/**";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
 		35D93CBBB38C1BAE1225B8AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE48F9C09CC74C9F9A431905 /* Pods.xcconfig */;
+			baseConfigurationReference = 544D3ACA2C6F6CB7CB6EAB7A /* Pods.release.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/AFNetworking_AutoRetry.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AFNetworking-AutoRetry/AFNetworking-AutoRetry-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				GCC_PREFIX_HEADER = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/**";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -361,6 +375,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -375,9 +390,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -391,6 +407,7 @@
 				35D938DC094EABFFAF36C81D /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35D937547C3123256E75348F /* Build configuration list for PBXProject "AFNetworking-AutoRetry" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +425,7 @@
 				35D93D7DEB953CD2835E2D8F /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
