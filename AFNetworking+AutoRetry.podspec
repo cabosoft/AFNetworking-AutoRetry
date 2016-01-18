@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
                      :tag => "v#{s.version}" }
 
   s.ios.deployment_target = '7.0'
-  s.osx.deployment_target = '10.10'
+  s.osx.deployment_target = '10.9'
   s.requires_arc = true
 
   s.source_files = '*.{h,m}'
